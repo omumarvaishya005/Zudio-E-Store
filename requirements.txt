@@ -1,0 +1,11 @@
+bcrypt
+Flask
+Flask-Login
+Flask-Migrate
+Flask-SQLAlchemy
+werkzeug
+Flask-WTF
+gunicorn
+itsdangerous
+Jinja2
+MarkupSafe
