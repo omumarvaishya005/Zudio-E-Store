@@ -1,0 +1,31 @@
+{% extends "adminpage.html" %}
+{%block body2 %}
+   <h1><img src='../static/img/logo.jpg' style = "Width:80px; border-radius:20px">
+       {% if frametitle == "Your Dress" %}
+       Your Bought dress
+       {% elif frametitle == "Search Dress" %}
+       Search dress results
+       {% else %}
+       All Dresses
+       {% endif %}
+   </h1>
+    <hr>
+<table>
+    <tr>
+        <th style="width:400px">Dressname</th>
+        {% if frametitle != "Your Dress" %}
+        <th style="width:400px">Seller</th>
+        <th style="width:400px">Available</th>
+        {% endif %}
+    </tr>
+    {% for x in dresslist %}
+    <tr>
+        <td  style="width:400px">{{ x.name }}</td>
+        {% if frametitle != "Your Dress" %}
+        <td  style="width:400px">{{ x.seller }}</td>
+        <td  style="width:400px">{{ x.available }}</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
